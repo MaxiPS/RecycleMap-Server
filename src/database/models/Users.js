@@ -89,3 +89,5 @@ Users.init(
     sequelize,
   }
 );
+
+module.exports = Users;

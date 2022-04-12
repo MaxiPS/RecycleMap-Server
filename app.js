@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: false }));
 // ROUTES
 
 app.get("/", (req, res) => res.json("Hola Mundo (INDEX APP)"));
+app.use("/api/users", require("./src/routes/users-routes"));
 
 // SERVER RUN
 
