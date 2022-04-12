@@ -10,15 +10,15 @@ Users.init(
       allowNull: false,
       validate: {
         notNull: {
-          msg: "names field can't be empty",
+          msg: "Name field can't be empty",
         },
         isAlpha: {
           args: true,
-          msg: "names can only contains letters",
+          msg: "Name can only contain letters",
         },
         len: {
           args: [2, 255],
-          msg: "the length of the names must be between 2 and 255",
+          msg: "Name length must be between 2 and 255",
         },
       },
     },
