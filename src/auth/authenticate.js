@@ -13,11 +13,12 @@ const buildToken = (user) => {
 };
 
 const authByToken = (req, res, next) => {
-  if (!req.headers["Authenticate"]) {
+  
+  if (!req.headers["authenticate"]) {
     return res.json({ error: "Missing Token" });
   }
 
-  const userToken = req.headers["Authenticate"];
+  const userToken = req.headers["authenticate"];
   let payload = {};
 
   try {
