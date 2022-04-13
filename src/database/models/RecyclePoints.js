@@ -56,7 +56,7 @@ RecyclePoints.init(
         "Papel y cartón",
         "Plástico",
         "Vidrio",
-        "Redisduos electrónicos",
+        "Residuos electrónicos",
         "Aceite",
         "Ropa y calzado",
       ],
