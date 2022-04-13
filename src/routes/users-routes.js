@@ -36,4 +36,15 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.get("/:id", (req, res) => {
+  User.findOne({
+    where: { id: req.params.id },
+    attributes: {
+      exclude: ["password", "email", "createdAt", "updatedAt", "id"],
+    },
+  })
+    .then((user) => res.json(user))
+    .catch((error) => res.json(error));
+});
+
 module.exports = router;
