@@ -9,10 +9,8 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  const { units, capacity, Ycoordinate, Xcoordinate, waste_type, city } = req.body;
+  const { Ycoordinate, Xcoordinate, waste_type, city } = req.body;
   RecyclePoints.create({
-    units,
-    capacity,
     Ycoordinate,
     Xcoordinate,
     waste_type,
@@ -23,9 +21,9 @@ router.post("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const { units, capacity, Ycoordinate, Xcoordinate, waste_type, city } = req.body;
+  const { Ycoordinate, Xcoordinate, waste_type, city } = req.body;
   RecyclePoints.update(
-    { units, capacity, Ycoordinate, Xcoordinate, waste_type, city },
+    { Ycoordinate, Xcoordinate, waste_type, city },
     { where: { id: req.params.id } }
   )
     .then((result) => res.json(result))

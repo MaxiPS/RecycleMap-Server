@@ -5,42 +5,6 @@ class RecyclePoints extends Model {}
 
 RecyclePoints.init(
   {
-    units: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      validate: {
-        min: {
-          args: [1],
-          msg: "Units must be at least 1",
-        },
-        max: {
-          args: [10],
-          msg: "Units must equal or be less than 10",
-        },
-        isInt: {
-          args: true,
-          msg: "Units must be an integer number",
-        },
-      },
-    },
-    capacity: {
-      type: DataTypes.INTEGER.UNSIGNED,
-      allowNull: false,
-      validate: {
-        isInt: {
-          args: true,
-          msg: "Capacity must be an integer number",
-        },
-        min: {
-          args: [120],
-          msg: "Capatity must be at least 120 litters",
-        },
-        max: {
-          args: [3000],
-          msg: "Capacity must equals or be less than 3000",
-        },
-      },
-    },
     Ycoordinate: {
       type: DataTypes.DOUBLE,
       allowNull: false,

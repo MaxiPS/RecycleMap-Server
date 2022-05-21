@@ -22,40 +22,6 @@ Users.init(
         },
       },
     },
-    first_last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: "First last name field can't be empty",
-        },
-        isAlpha: {
-          args: true,
-          msg: "First last name field can only contains letters",
-        },
-        len: {
-          args: [2, 255],
-          msg: "First last name length must be between 2 and 255",
-        },
-      },
-    },
-    second_last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        notNull: {
-          msg: "Second last name field can't be empty",
-        },
-        isAlpha: {
-          args: true,
-          msg: "Second last name field can only contains letters",
-        },
-        len: {
-          args: [2, 255],
-          msg: "Second last name length must be between 2 and 255",
-        },
-      },
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

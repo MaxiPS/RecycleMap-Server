@@ -6,11 +6,9 @@ const User = require("../database/models/Users");
 const { buildToken } = require("../auth/authenticate");
 
 router.post("/register", (req, res) => {
-  const { name, first_last_name, second_last_name, email, password } = req.body;
+  const { name, email, password } = req.body;
   User.create({
     name,
-    first_last_name,
-    second_last_name,
     email,
     password: bcrypt.hashSync(password, 10),
   })
