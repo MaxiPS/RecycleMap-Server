@@ -24,7 +24,10 @@ router.post("/login", (req, res) => {
     if (user) {
       const validatePassword = bcrypt.compareSync(password, user.password);
       if (validatePassword) {
-        res.json({ token: buildToken(user) });
+        res.json({
+          userData: { id: user.id, name: user.name, email: user.email },
+          token: buildToken(user),
+        });
       } else {
         res.json({ error: "Invalid Password" });
       }
