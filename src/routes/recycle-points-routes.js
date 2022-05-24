@@ -8,28 +8,25 @@ router.get("/", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-router.get("/:id", (req, res) => {
-  RecyclePoints.findAll({ where: { UserId: req.params.id } })
-    .then((result) => res.json(result))
-    .catch((err) => res.json(err));
-});
-
 router.post("/", (req, res) => {
-  const { Ycoordinate, Xcoordinate, waste_type, city } = req.body;
+  const { coordinateY, coordinateX, address, wasteType, city, UserId } =
+    req.body;
   RecyclePoints.create({
-    Ycoordinate,
-    Xcoordinate,
-    waste_type,
+    coordinateY,
+    coordinateX,
+    address,
+    wasteType,
     city,
+    UserId,
   })
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
 
 router.put("/:id", (req, res) => {
-  const { Ycoordinate, Xcoordinate, waste_type, city } = req.body;
+  const { coordinateY, coordinateX, address, wasteType, city } = req.body;
   RecyclePoints.update(
-    { Ycoordinate, Xcoordinate, waste_type, city },
+    { coordinateY, coordinateX, address, wasteType, city },
     { where: { id: req.params.id } }
   )
     .then((result) => res.json(result))

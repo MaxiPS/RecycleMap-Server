@@ -1,5 +1,5 @@
-const User = require("../database/models/Users");
+const user = require("../database/models/Users");
 const RecyclePoints = require("../database/models/RecyclePoints");
 
-User.hasMany(RecyclePoints);
-RecyclePoints.belongsTo(User);
+user.hasMany(RecyclePoints);
+RecyclePoints.belongsTo(user);

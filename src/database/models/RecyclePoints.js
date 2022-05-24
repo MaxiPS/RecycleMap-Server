@@ -5,15 +5,15 @@ class RecyclePoints extends Model {}
 
 RecyclePoints.init(
   {
-    Ycoordinate: {
+    coordinateY: {
       type: DataTypes.DOUBLE,
       allowNull: false,
     },
-    Xcoordinate: {
+    coordinateX: {
       type: DataTypes.DOUBLE,
       allowNull: false,
     },
-    waste_type: {
+    wasteType: {
       type: DataTypes.ENUM,
       allowNull: false,
       values: [
@@ -24,6 +24,10 @@ RecyclePoints.init(
         "Aceite",
         "Ropa y calzado",
       ],
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     city: {
       type: DataTypes.ENUM,
