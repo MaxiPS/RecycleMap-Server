@@ -18,7 +18,11 @@ app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => res.json("Hola Mundo (INDEX APP)"));
 app.use("/api/users", require("./src/routes/users-routes"));
-app.use("/api/recyclemarkers", require("./src/routes/recycle-points-routes"));
+app.use(
+  "/api/recyclemarkers",
+  authByToken,
+  require("./src/routes/recycle-points-routes")
+);
 
 // SERVER RUN
 
